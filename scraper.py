@@ -29,6 +29,7 @@ PROJECTS_LIST_URL = BASE_URL + '/w/index.php?title=Special:WhatLinksHere/Templat
 content_link_p = re.compile(r'/[^/:]+$', re.IGNORECASE)
 infobox_p = re.compile(r'{{Infobox project(.|\n)*?}}', re.MULTILINE)
 clean_name_p = re.compile(r'[^a-zA-Z0-9]')
+clean_file_name_p = re.compile(r'[^a-zA-Z0-9.\)\(;,ó-]')
 
 @click.group(context_settings=CONTEXT_SETTINGS)
 @click.version_option()
@@ -83,7 +84,7 @@ class AppropediaScraper:
         # there.
         return user_name
         user_file = self.storage_dir + '/user__' + clean_name_p.sub('_', user_name)
-        download(BASE_URL + '/User:' + user_name, user_file)
+        download(BASE_URL + '/User:' + urllib.parse.quote_plus(user_name), user_file)
         user_file_h = open(user_file, mode='r')
         user_page_content = user_file_h.read()
         user_file_h.close()
@@ -107,6 +108,33 @@ class AppropediaScraper:
         }}
         ...
         '''
+
+    def image_name2url(self, title, image):
+        clean_name = clean_file_name_p.sub('_', image)
+        wiki_url = BASE_URL + '/File:' + urllib.parse.quote_plus(clean_name)
+        #https://www.appropedia.org/w/images/8/85/2005_zaragoza_system.jpg
+        image_page_file = os.path.join(self.storage_dir, 'image__' + title +
+                                       '__' + clean_name + '.html')
+        if not os.path.exists(image_page_file) or self.force_redownload:
+            download(wiki_url, image_page_file)
+        image_page_h = open(image_page_file, mode='r')
+        image_page = image_page_h.read()
+        image_page_h.close()
+        soup = BeautifulSoup(image_page)
+
+        # Look for appropedia-hosted file
+        for lnk in soup.findAll('a'):
+            lnk_url = lnk.get('href')
+            if lnk_url.startswith('/w/images/'):
+                return BASE_URL + lnk_url
+
+        # if not on appropedia, look for a wikimedia link
+        for lnk in soup.findAll('a'):
+            lnk_url = lnk.get('href')
+            if lnk_url.startswith('https://upload.wikimedia.org/wikipedia/commons/') and lnk_url.endswith(clean_name):
+                return lnk_url
+        # example https://upload.wikimedia.org/wikipedia/commons/b/bc/Wind_generator_system.jpg
+        raise RuntimeError('Failed to find original image URL')
 
     def apppropedia2okh(self, props_appro: dict):
         '''
@@ -175,7 +203,7 @@ class AppropediaScraper:
         if 'image' in props_appro:
             image = props_appro['image']
             if not validators.url(image):
-                image = BASE_URL + '/' + image
+                image = self.image_name2url(props_appro['title'], image)
         else:
             image = None
 
