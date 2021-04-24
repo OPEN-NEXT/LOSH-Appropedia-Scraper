@@ -88,7 +88,7 @@ class AppropediaScraper:
         user_file_h = open(user_file, mode='r')
         user_page_content = user_file_h.read()
         user_file_h.close()
-        soup = BeautifulSoup(user_page_content)
+        soup = BeautifulSoup(user_page_content, features="lxml")
         # TODO 'Download such a user page and analyze it, to be able to parse it'
         '''
         {{Infobox user
@@ -120,7 +120,7 @@ class AppropediaScraper:
         image_page_h = open(image_page_file, mode='r')
         image_page = image_page_h.read()
         image_page_h.close()
-        soup = BeautifulSoup(image_page)
+        soup = BeautifulSoup(image_page, features="lxml")
 
         # Look for appropedia-hosted file
         for lnk in soup.findAll('a'):
@@ -215,12 +215,38 @@ class AppropediaScraper:
         elif 'caption' in props_appro:
             description = props_appro['caption']
 
+        technology_readiness = None
+        if props_appro.get('replicated', 'No') == 'Yes' \
+                or not props_appro.get('replicated-in', None) is None: # 'made-independently'
+            technology_readiness = 'otlr:OTLR-5'
+        elif props_appro.get('made', 'No') == 'Yes':
+            technology_readiness = 'otlr:OTLR-4'
+        elif 'status' in props_appro: # 'development-stage'
+            stati = props_appro['status'].split(',')
+            if 'Commercialized' in stati \
+                    or 'Deployed' in stati \
+                    or 'Implemented' in stati \
+                    or 'Verified' in stati:
+                technology_readiness = 'otlr:OTLR-5'
+            elif 'Prototype' in stati:
+                technology_readiness = 'otlr:OTLR-4'
+        '''
+        Values found for 'status':
+        Commercialized
+        Deployed
+        Design, Prototype
+        Idea
+        Implemented
+        Open design
+        Prototype
+        Verified
+        '''
+
         props_okh = {
             'name': props_appro['title'],
             'repo': props_appro['url'],
             'license': 'CC-BY-SA 4.0',
             'okhv': '2.0',
-            #'': props_appro[''],
         }
         if len(authors) > 0:
             props_okh['licensor'] = authors
@@ -230,13 +256,8 @@ class AppropediaScraper:
             props_okh['function'] = description
         if 'language-code' in props_appro:
             props_okh['documentation-language'] = props_appro['language-code']
-        # TODO Use the 4 things below as well
-        '''
-        | uses           = technology-readiness-level, documentation-readiness-level
-        | status         = technology-readiness-level, documentation-readiness-level
-        | made           = technology-readiness-level, documentation-readiness-level
-        | replicated     = technology-readiness-level, documentation-readiness-level
-        '''
+        if not image is None:
+            props_okh['technology-readiness-level'] = technology_readiness
         return props_okh
 
     def store_properties(self, props_appro):
