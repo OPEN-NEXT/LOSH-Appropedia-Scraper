@@ -39,6 +39,10 @@ def version_token():
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 
+
+
+
+
 class AppURLopener(urllib.request.FancyURLopener):
     version = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.69 Safari/537.36"
 
@@ -218,18 +222,18 @@ class AppropediaScraper:
         technology_readiness = None
         if props_appro.get('replicated', 'No') == 'Yes' \
                 or not props_appro.get('replicated-in', None) is None: # 'made-independently'
-            technology_readiness = 'otlr:OTLR-5'
+            technology_readiness = 'OTLR-5'
         elif props_appro.get('made', 'No') == 'Yes':
-            technology_readiness = 'otlr:OTLR-4'
+            technology_readiness = 'OTLR-4'
         elif 'status' in props_appro: # 'development-stage'
             stati = props_appro['status'].split(',')
             if 'Commercialized' in stati \
                     or 'Deployed' in stati \
                     or 'Implemented' in stati \
                     or 'Verified' in stati:
-                technology_readiness = 'otlr:OTLR-5'
+                technology_readiness = 'OTLR-5'
             elif 'Prototype' in stati:
-                technology_readiness = 'otlr:OTLR-4'
+                technology_readiness = 'OTLR-4'
         '''
         Values found for 'status':
         Commercialized
