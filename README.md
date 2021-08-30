@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/374925324.svg)](https://zenodo.org/badge/latestdoi/374925324)
+[![DOI](https://zenodo.org/badge/360458831.svg)](https://zenodo.org/badge/latestdoi/360458831)
 [![GitHub license](https://img.shields.io/github/license/OPEN-NEXT/LOSH-Appropedia-Scraper.svg?style=flat)](./LICENSE)
 
 # LOSH Appropedia scraper
