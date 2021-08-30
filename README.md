@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/374925324.svg)](https://zenodo.org/badge/latestdoi/374925324)
+[![GitHub license](https://img.shields.io/github/license/OPEN-NEXT/LOSH-Appropedia-Scraper.svg?style=flat)](./LICENSE)
+
 # LOSH Appropedia scraper
 
 This contains a python script that fetches the list of projects from [Appropedia.org](https://www.appropedia.org/),
