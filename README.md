@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2021 Robin Vobruba <hoijui.quaero@gmail.com>
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 [![DOI](https://zenodo.org/badge/360458831.svg)](https://zenodo.org/badge/latestdoi/360458831)
 [![GitHub license](https://img.shields.io/github/license/OPEN-NEXT/LOSH-Appropedia-Scraper.svg?style=flat)](./LICENSE)
 
