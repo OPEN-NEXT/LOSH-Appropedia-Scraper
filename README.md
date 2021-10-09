@@ -10,6 +10,9 @@ SPDX-License-Identifier: CC0-1.0
 [![GitHub license](
     https://img.shields.io/github/license/OPEN-NEXT/LOSH-Appropedia-Scraper.svg?style=flat)](
     ./LICENSE)
+[![REUSE status](
+    https://api.reuse.software/badge/github.com/OPEN-NEXT/LOSH-Appropedia-Scraper)](
+    https://api.reuse.software/info/github.com/OPEN-NEXT/LOSH-Appropedia-Scraper)
 
 # LOSH Appropedia scraper
 
