@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: "3 2 * * 1" # at 03:02 every Monday, UTC
   push:
-    branches: [ master ]
+    branches: [ master, main ]
     paths:
       - 'appro-fetcher'
       - '.github/workflows/generate.yml'
