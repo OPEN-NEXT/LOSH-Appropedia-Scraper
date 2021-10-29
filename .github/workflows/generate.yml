@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2021 Robin Vobruba <hoijui.quaero@gmail.com>
+#
+# SPDX-License-Identifier: Unlicense
+
+name: generate_and_host
+
+on:
+  schedule:
+    - cron: "3 2 * * 1" # at 03:02 every Monday, UTC
+  push:
+    branches: [ master ]
+    paths:
+      - 'appro-fetcher'
+      - '.github/workflows/generate.yml'
+
+jobs:
+  generate_and_host:
+    name: Generate & Host on pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check out this repo"
+        uses: actions/checkout@v2
+
+      - name: "Scrape"
+        run: ./appro-fetcher
+
+      - name: Deploy to pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
+

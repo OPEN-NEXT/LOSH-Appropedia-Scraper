@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2021 Robin Vobruba <hoijui.quaero@gmail.com>
+#
+# SPDX-License-Identifier: Unlicense
+
+# See the output of "$0 -h" for details.
+
+# Exit immediately on each error and unset variable;
+# see: https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+set -Eeuo pipefail
+#set -Eeu
+
+script_dir=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
+#source "$script_dir/_shared_git"
+
+# initial default values
+APP_NAME="appropedia.org Project Names Fetcher"
+root_dir="$script_dir"
+build_dir="$root_dir/target"
+publish_dir="$root_dir/public"
+raw_html_file="$build_dir/appro_list.html"
+csv_names_file="$build_dir/appro_proj_names.csv"
+csv_upstream_style_file="$build_dir/appro_yaml_urls.csv"
+APPRO_OKH_GEN_URL_PREFIX="https://www.appropedia.org/okh.php?title="
+# ... for example: https://www.appropedia.org/okh.php?title=Zero-electricity_refrigerator
+
+function print_help() {
+
+	script_name="$(basename "$0")"
+	echo "$APP_NAME - Fetches an HTML file from appropedia,"
+	echo "containing the list of all the projects (names) they are hosting,"
+	echo "and extracts the raw (1 column CSV) list from that."
+	echo
+	echo "Usage:"
+	echo "  $script_name [OPTION...]"
+	echo "Options:"
+	echo "  -h, --help              Print this usage help and exit"
+	echo "Examples:"shasum
+	echo "  $script_name"
+}
+
+# read command-line args
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+	arg="$1"
+	shift # $2 -> $1, $3 -> $2, ...
+
+	case "$arg" in
+		-h|--help)
+			print_help
+			exit 0
+			;;
+		*) # non-/unknown option
+			POSITIONAL+=("$arg") # save it in an array for later
+			;;
+	esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+function store_raw_html_to_file() {
+
+	out_file="$1"
+	curl \
+		'https://www.appropedia.org/Special:Export' \
+		-H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0' \
+		-H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' \
+		-H 'Accept-Language: en-US,en;q=0.5' \
+		--compressed \
+		-H 'Content-Type: application/x-www-form-urlencoded' \
+		-H 'Origin: https://www.appropedia.org' \
+		-H 'Connection: keep-alive' \
+		-H 'Referer: https://www.appropedia.org/Special:Export?catname=Projects' \
+		-H 'Cookie: VEE=wikitext; ct_cookies_test=%7B%22cookies_names%22%3A%5B%22ct_prev_referer%22%5D%2C%22check_value%22%3A%229f62937ce1584a62bcc4de7aad5bf57c%22%7D; ct_ps_timestamp=1635370811; ct_fkp_timestamp=1635400169; ct_pointer_data=%5B%5B1%2C1214%2C2820%5D%2C%5B6%2C1288%2C2935%5D%2C%5B19%2C1409%2C3085%5D%2C%5B13%2C1488%2C3235%5D%2C%5B7%2C956%2C47087%5D%2C%5B38%2C797%2C47234%5D%2C%5B8%2C620%2C50753%5D%2C%5B7%2C1067%2C491086%5D%2C%5B83%2C1014%2C491234%5D%2C%5B95%2C1004%2C491933%5D%2C%5B95%2C1000%2C491985%5D%2C%5B95%2C999%2C492876%5D%2C%5B95%2C998%2C493067%5D%2C%5B96%2C993%2C493317%5D%2C%5B96%2C986%2C493333%5D%2C%5B85%2C892%2C493484%5D%2C%5B22%2C250%2C29422331%5D%2C%5B251%2C301%2C29422456%5D%2C%5B262%2C311%2C29423426%5D%2C%5B182%2C509%2C29423506%5D%2C%5B80%2C1203%2C29423655%5D%2C%5B30%2C319%2C30212955%5D%2C%5B156%2C281%2C30213040%5D%2C%5B232%2C253%2C30213389%5D%2C%5B317%2C348%2C30213488%5D%2C%5B408%2C534%2C30215056%5D%2C%5B92%2C796%2C30215141%5D%2C%5B646%2C434%2C30746023%5D%2C%5B563%2C451%2C30746059%5D%2C%5B367%2C511%2C30746206%5D%2C%5B254%2C536%2C30746357%5D%2C%5B45%2C607%2C30746514%5D%2C%5B13%2C440%2C30812323%5D%2C%5B195%2C980%2C30812439%5D%2C%5B273%2C1083%2C30812589%5D%2C%5B280%2C1084%2C30812789%5D%2C%5B284%2C1081%2C30813039%5D%2C%5B295%2C1072%2C30817839%5D%2C%5B300%2C1058%2C30817888%5D%2C%5B289%2C1029%2C30818039%5D%2C%5B164%2C728%2C30818189%5D%2C%5B115%2C640%2C30821222%5D%2C%5B202%2C671%2C30821339%5D%2C%5B219%2C679%2C30821506%5D%2C%5B288%2C703%2C30823472%5D%2C%5B309%2C986%2C30823606%5D%2C%5B364%2C1037%2C30823759%5D%2C%5B378%2C1071%2C30823906%5D%2C%5B381%2C1095%2C30824056%5D%2C%5B389%2C1103%2C30824205%5D%5D; ct_timezone=2; ct_checkjs=e0f60200ba6ac043bfa5a559d48a5784; appropedia_2020_w1mwuser-sessionId=dc80d63274b5dd1cab87; ct_prev_referer=https%3A%2F%2Fwww.appropedia.org%2FSpecial%3AExport%3Fcatname%3DProjects' \
+		-H 'Upgrade-Insecure-Requests: 1' \
+		-H 'DNT: 1' \
+		-H 'Sec-GPC: 1' \
+		--data-raw 'catname=Projects&addcat=Add&pages=&curonly=1&wpDownload=1&wpEditToken=%2B%5C&title=Special%3AExport' \
+		--output "$out_file"
+}
+
+mkdir -p "$build_dir"
+
+store_raw_html_to_file "$raw_html_file"
+awk -f "$script_dir/appro-parser.awk" \
+	< "$raw_html_file" \
+	| sort \
+	> "$csv_names_file"
+
+{
+	date="$(date +"%Y-%m-%d")"
+	echo "Project name, date added(YYYY-MM-DD), link to YML file"
+	while read -r proj_name
+	do
+		echo "appropedia_org--$proj_name,$date,${APPRO_OKH_GEN_URL_PREFIX}$proj_name"
+	done
+} < "$csv_names_file" > "$csv_upstream_style_file"
+
+mkdir -p "$publish_dir"
+rm -Rf "${publish_dir:?}/"*
+cp \
+	"$csv_names_file" \
+	"$csv_upstream_style_file" \
+	"$publish_dir/"
+/usr/bin/tree -H . -o "$build_dir/index.html" "$publish_dir/"
+sed -i -e 's|<body>|<body>\nGenerated at '"$(date)"'<br>|' "$build_dir/index.html"
+mv "$build_dir/index.html" "$publish_dir/"
+
