@@ -89,7 +89,7 @@ awk -f "$script_dir/appro-parser.awk" \
 
 {
 	date="$(date +"%Y-%m-%d")"
-	echo "Project name, date added(YYYY-MM-DD), link to YML file"
+	echo "Project name,date added(YYYY-MM-DD),link to YML file"
 	while read -r proj_name
 	do
 		echo "appropedia_org--$proj_name,$date,${APPRO_OKH_GEN_URL_PREFIX}$proj_name"
