@@ -103,6 +103,7 @@ mkdir -p "$build_dir"
 store_raw_html_to_file "$raw_html_file"
 awk -f "$script_dir/appro-parser.awk" \
 	< "$raw_html_file" \
+	| sed -e 's|&amp;|&|g' -e 's|&quot;|"|g' \
 	| sort \
 	> "$csv_names_file"
 
