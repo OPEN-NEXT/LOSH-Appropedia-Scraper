@@ -80,7 +80,7 @@ function url_encode() {
 	# 	esac
 	# 	encoded+="${o}"
 	# done
-	# printf '%s' "$encoded"  # You can either set a return variable (FASTER)
+	# printf '%s\n' "$encoded"  # You can either set a return variable (FASTER)
 	#REPLY="$encoded"   # +or echo the result (EASIER)... or both... :p
 }
 
@@ -114,7 +114,6 @@ mv "$csv_names_file" "${csv_names_file}_TMP"
 while read -r line
 do
 	url_encode "$line"
-	echo
 done < "${csv_names_file}_TMP" > "$csv_names_file"
 rm "${csv_names_file}_TMP"
 
