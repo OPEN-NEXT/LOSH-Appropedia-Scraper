@@ -66,20 +66,21 @@ function url_encode() {
 
 	# This just URL-encodes the non-standard characters,
 	# but it is slow!
-	#printf '%s' "$input" | curl -Gso /dev/null -w "%{url_effective}" --data-urlencode @- "" | cut -c 3- || true
+	printf '%s' "$input" | curl -Gso /dev/null -w "%{url_effective}" --data-urlencode @- "" | cut -c 3- || true
 
-	local input_len=${#input}
-	local encoded=""
-	local pos c o
-	for (( pos=0 ; pos<input_len ; pos++ )); do
-		c=${input:$pos:1}
-		case "$c" in
-			[-_.~a-zA-Z0-9] ) o="${c}" ;;
-			* )               printf -v o '%%%02x' "'$c"
-		esac
-		encoded+="${o}"
-	done
-	printf '%s' "$encoded"  # You can either set a return variable (FASTER)
+	# Pure BASH, converts too much, and seems ot fail at special chars like ae
+	# local input_len=${#input}
+	# local encoded=""
+	# local pos c o
+	# for (( pos=0 ; pos<input_len ; pos++ )); do
+	# 	c=${input:$pos:1}
+	# 	case "$c" in
+	# 		[-_.~a-zA-Z0-9] ) o="${c}" ;;
+	# 		* )               printf -v o '%%%02x' "'$c"
+	# 	esac
+	# 	encoded+="${o}"
+	# done
+	# printf '%s' "$encoded"  # You can either set a return variable (FASTER)
 	#REPLY="$encoded"   # +or echo the result (EASIER)... or both... :p
 }
 
