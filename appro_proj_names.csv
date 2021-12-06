@@ -63,6 +63,7 @@ AEF_photovoltaic_system%2FTroubleshooting
 AEF_spiral_herb_garden
 AIDG_biodigester
 ANSiscope
+APSC100
 APSC100-Project153
 APSC100_Solar_Powered_XO
 APSC_100_213A
@@ -219,6 +220,7 @@ CCAT_CCATBox
 CCAT_Clay-straw_slip_wall
 CCAT_DraftMaster
 CCAT_Earthship_Wall
+CCAT_Gravity_fed_drip_irrigation
 CCAT_Hydroponics%2FOM
 CCAT_Lava_y_jala_el_inodoro
 CCAT_MEOW
@@ -322,6 +324,7 @@ CCAT_sunfrost_refrigerator
 CCAT_sunfrost_refrigerator%2FOM
 CCAT_thermal_curtains_howto
 CCAT_vertical_garden
+CCAT_yurt
 CCAT_yurt%2FOM
 CCAT_yurt_rainwater_catchment
 CCAT_yurt_retaining_wall
@@ -566,6 +569,7 @@ Expanded_Microchannel_Heat_Exchanger%3A_Finite_Difference_Modeling
 Expanded_microchannel_heat_exchanger
 Expanded_microchannel_heat_exchanger%3A_Non-destructive_evaluation
 Experimental_Characterization_of_Heat_Transfer_in_an_Additively_Manufactured_Polymer_Heat_Exchanger
+Extending_the_Life_of_your_Sponge
 External_Aortic_Compression_Device
 Extra_Low_voltage_power_supply
 FBP_Hot_Dang_Plastic_Encasement
@@ -729,6 +733,7 @@ Hemostats
 Hexayurt%2FBook
 Hexayurt_Frame_TUE_Research_Outline
 Hexayurt_Project
+Hexayurt_project
 Hexayurt_project%2FCooling
 Hexayurt_project%2FHexayurt_H2
 Hexayurt_project%2FInfrastructure
@@ -1103,6 +1108,7 @@ OSHE_Growbot
 OSHE_Growbot_Motor_Encoders
 OSHE_Growbot_Mounting_Units
 OSHE_High_Temperature_3D_Printer
+OSHE_LiDAR_Bot
 OSHE_Print_Farm_Automation
 OSSTIP
 OSU_Bike_Trailer
