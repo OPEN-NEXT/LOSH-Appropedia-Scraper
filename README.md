@@ -22,7 +22,7 @@ hosted on appropedia.org, and makes them available as:
 * [`appro_proj_names.csv`](https://open-next.github.io/LOSH-Appropedia-Scraper/appro_proj_names.csv)
   \- the list of project names
 * [`appro_yaml_urls.csv`](https://open-next.github.io/LOSH-Appropedia-Scraper/appro_yaml_urls.csv)
-  \- the table containin the OKH v1 file URLs
+  \- the table containing only the OKH v1 file URLs
 
 (Both are re-generated weekly at 03:02 each Monday, UTC)
 
