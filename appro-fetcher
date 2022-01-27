@@ -21,8 +21,8 @@ publish_dir="$root_dir/public"
 raw_html_file="$build_dir/appro_list.html"
 csv_names_file="$build_dir/appro_proj_names.csv"
 csv_upstream_style_file="$build_dir/appro_yaml_urls.csv"
-APPRO_OKH_GEN_URL_PREFIX="https://www.appropedia.org/okh.php?title="
-# ... for example: https://www.appropedia.org/okh.php?title=Zero-electricity_refrigerator
+APPRO_OKH_GEN_URL_PREFIX="https://www.appropedia.org/generateOpenKnowHowManifest.php?title="
+# ... for example: https://www.appropedia.org/generateOpenKnowHowManifest.php?title=Zero-electricity_refrigerator
 
 function print_help() {
 
