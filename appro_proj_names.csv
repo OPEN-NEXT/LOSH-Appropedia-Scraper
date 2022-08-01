@@ -281,6 +281,7 @@ CCAT_clothes_drying
 CCAT_cob_bench_howto
 CCAT_cob_protection_and_beautification
 CCAT_cold_box
+CCAT_cold_box_2017
 CCAT_cold_closet_how_to
 CCAT_companion_planting
 CCAT_compost_2017
@@ -296,6 +297,7 @@ CCAT_greenshed_cob_wall
 CCAT_greenshed_cob_wall%2FOM
 CCAT_greenshed_cordwood_wall
 CCAT_greenshed_cordwood_wall%2FOM
+CCAT_greenshed_rainwater_catchment
 CCAT_greenshed_solar_lighting
 CCAT_greenshed_solar_lighting%2FOperations_and_maintenance_manual
 CCAT_greenshed_solar_lighting_2015
@@ -1658,7 +1660,6 @@ Solar_ice_makers
 Solar_oven_based_on_Fresnel_mirrors
 Solar_powered_Internet_cafe_in_Nairobi
 Solar_powered_internet_methods
-Solar_resource_measurement_for_PV_applications
 Solar_water_purification_system_with_solar_heating
 Spider_boots
 Spoke_wrench
