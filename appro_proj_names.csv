@@ -20,6 +20,7 @@
 3D-printed_tent_stake
 3D_Metal_Printer
 3D_Print_Material_Scale
+3D_Printed_Smart-House_Model
 3D_Printed_vat_for_SLA_printer
 3D_Scanner_with_2_laser
 3D_printed_0.5in_drive_speed_brace
@@ -381,6 +382,7 @@ CCAT_greenshed_cob_wall
 CCAT_greenshed_cob_wall%2FOM
 CCAT_greenshed_cordwood_wall
 CCAT_greenshed_cordwood_wall%2FOM
+CCAT_greenshed_cordwood_wall%2FOM%2Fsk
 CCAT_greenshed_rainwater_catchment
 CCAT_greenshed_rainwater_catchment%2F2011
 CCAT_greenshed_solar_lighting
@@ -593,6 +595,7 @@ Customizable_Bike_Light_Mount
 Customizable_Hinges
 Customizable_shovel_handle
 C%C3%B3mo_hacer_ecoladrillos_caseros
+C%C3%B3mo_hacer_ecoladrillos_caseros%2Fen
 C%C3%B3mo_hacer_un_deshidratador_solar_con_una_caja
 C%C3%B3mo_hacer_un_deshidratador_solar_con_una_caja%2Fen
 C%C3%B3mo_hacer_un_deshidratador_solar_con_una_caja%2Fur
@@ -614,6 +617,7 @@ Danielle%27s_Drop_Box_for_the_R.O.S.E._Center
 Daula_waste_community_engagement_2018
 Daula_waste_product_2018
 Daycare_rainwater_catchment_system
+Daycare_rainwater_catchment_system%2Fes
 Daycare_rainwater_catchment_system%2Fzh
 DeNovo_Meter
 Decentralized_Renewable_Hybrid_Mini-Grids_for_Rural_Communities%3A_Culmination_of_the_IREP_Framework_and_Scale_up_to_Urban_Communities
@@ -685,8 +689,6 @@ Dust_Mask
 Dye-sensitized_solar_cells_as_promising_candidates_for_underwater_photovoltaic_applications
 Dye-sensitized_solar_cells_as_promising_candidates_for_underwater_photovoltaic_applications%2Fth
 E-Nose
-E215_Introduction_to_Design_projects
-E215_Introduction_to_Design_projects%2Fpt
 E305_backyard_biodigester
 EB1_Foot
 EC-Kit
@@ -769,7 +771,9 @@ Energy_Modeling_and_Techno-Economic_Feasibility_Analysis_of_Greenhouses_for_Toma
 Energy_and_carbon_analysis_of_upcycled_pint_glasses
 Energy_and_quality_of_life
 Engr114_bicycle_trailer_fabrication
-Engr215_Lunchbox_Envy
+Engr205_Introduction_to_Design_projects
+Engr205_Introduction_to_Design_projects%2Fpt
+Engr205_Lunchbox_Envy
 Engr305_pulser_pump
 Engr305_pulser_pump%2Ffr
 Engr305_pulser_pump%2Fja
@@ -856,6 +860,7 @@ Food_processing_building_design_%28Practical_Action_Brief%29
 Forceps%5CTweezers
 Forest_Garden_No._2_at_Nature%27s_World
 Forest_biochar_rocket_stove
+Forest_biochar_rocket_stove%2Fru
 Fork_Support_for_Bike
 Framing_Spacer
 Free-Libre_Hardware_RFID_handheld_device
@@ -938,6 +943,7 @@ HSU_straw_analysis%2Fpt
 HSU_straw_analysis%2Fvi
 HSU_straw_analysis%2Fzh
 HTI_Hydropack
+HTI_Hydropack%2Fzh
 Hackatones_para_que_los_estudiantes_mejoren_la_infraestructura_en_las_escuelas
 Haiti_Communitere_Ubuntu_Blox_house
 Haiti_Communitere_aquaponics
@@ -1010,6 +1016,7 @@ Home_Phototherapy_Unit
 Home_Phototherapy_Unit%2Fru
 Home_biogas_system_%28Philippine_BioDigesters%29
 Home_biogas_system_%28Philippine_BioDigesters%29%2Fde
+Home_biogas_system_%28Philippine_BioDigesters%29%2Fzh
 Homemade_Wheel_Hoe
 Honey_Forge
 Honey_Forge%2Fzh
@@ -1179,6 +1186,8 @@ Kuokoa_simu_ya_mkononi_iliyolowa
 Kuua_vijidudu_kwenye_maji_kwa_Jua
 LCA_of_Pig_Farming
 LCA_of_silicon_PV_panels
+LCA_of_silicon_PV_panels%2Fauto
+LCA_of_silicon_PV_panels%2Fbn
 LCA_of_silicon_PV_panels%2Fes
 LCA_of_silicon_PV_panels%2Fit
 LCA_of_silicon_PV_panels%2Fja
@@ -1214,6 +1223,7 @@ Las_Malvinas_ecoladrillo_schoolroom_2012%2FTimeline
 Las_Malvinas_hullkrete_2015
 Las_Malvinas_hullkrete_2015_%28Espa%C3%B1ol%29
 Las_Malvinas_rainwater_catchment_system_2013
+Las_Malvinas_rainwater_catchment_system_2013%2Fes
 Las_Malvinas_rainwater_catchment_system_2013%2Fzh
 Las_Malvinas_rainwater_catchment_system_2014
 Las_Malvinas_rainwater_feasibility_study_2014
@@ -1251,10 +1261,12 @@ Literature_Review_for_Comparative_LCA_Comparative_Life_Cycle_Assessment_of_Solar
 Literature_Review_on_Design_and_Control_of_Dual_Active_Bridge_Converter_Cascaded_with_Inverter_to_Interface_Between_Nano_grid_and_AC_network.
 Literature_review%3A_Open_source_solar_power_supply_unit_for_plasma_generator
 Load_Carrier_for_labour
+Load_Carrier_for_labour%2Fko
 Local_polivalente
 Locally_Delicious_Kids_Worm_Bin
 Locally_Delicious_Worm_Bin_for_School
 Locally_Delicious_rowing_machine_blender_for_schools
+Locally_Delicious_rowing_machine_blender_for_schools%2Fhu
 Locally_Delicious_school_solar_dehydrator
 Locally_Delicious_school_solar_oven
 Locally_Delicious_solar_dehydrator_for_kids_with_adult_supervision
@@ -1338,6 +1350,7 @@ Merkaba_Trueke_Barter_Exchange_at_Semillero_Romita
 Metal_reclamation_and_recycling_of_electronic_waste
 Metal_reclamation_and_recycling_of_electronic_waste%2Fja
 Mi_tercer_brazo
+Mi_tercer_brazo%2Fen
 Micro-Turbines_for_Water_Power
 Micro-turbine_for_water_power
 Micro_Lathe
@@ -1553,6 +1566,7 @@ Open_Source_Cinematography_Quadcopter%2Fru
 Open_Source_Completely_3-D_Printable_Centrifuge
 Open_Source_Computer_Vision-based_Layer-wise_3D_Printing_Analysis
 Open_Source_Digitally_Replicable_Lab-Grade_Scales
+Open_Source_Framework_for_a_Broadly_Expandable_and_Reconfigurable_Data_Acquisition_and_Automation_Device_%28BREAD%29
 Open_Source_Fume_Extractor
 Open_Source_High-Temperature_Reprap_for_3-D_Printing_Heat-Sterilizable_PPE_and_Other_Applications
 Open_Source_Laboratory_Sample_Rotator_Mixer_and_Shaker
@@ -1584,6 +1598,7 @@ Open_source_Inkjet_printers%2Fid
 Open_source_Inkjet_printers%2Fpl
 Open_source_Inkjet_printers%2Fpt
 Open_source_cellulose_insulation_manufacturing
+Open_source_cellulose_insulation_manufacturing%2Fes
 Open_source_gym_and_fitness_equipment
 Open_source_hoe
 Open_source_smart_thermostat
@@ -1619,7 +1634,9 @@ Palo_multifunci%C3%B3n
 Pampu_ya_kamba
 Pandemic_Ventilator
 Papasan_chair_solar_cooker
+Papasan_chair_solar_cooker%2Far
 Papasan_chair_solar_cooker%2Fes
+Papasan_chair_solar_cooker%2Fpt
 Papasan_chair_solar_cooker%2Fru
 Paper-Clay_Retaining_Wall
 Paper_Based_Biosensor
@@ -1696,6 +1713,7 @@ Plastic_Bottle_Greenhouse
 Plastic_water_bottle_solar_water_heater
 PlayPump
 Plough_construction_manual
+Plough_construction_manual%2Fde
 Plough_construction_manual%2Ffr
 Pocket_Wrench
 PointCare_NOW_Machine
@@ -1823,6 +1841,7 @@ RCEA_energy_audit_reviews%2FWildberries_Marketplace
 RC_Ultimate_v1.0
 RESU%27s_Picohydro_Demo
 RGB_Roof_Type_Classification
+RGB_Roof_Type_Classification%2Ftr
 RIDA_QUICK_Rotavirus%5CAdenovirus_Combi
 RMWSSS_Plastic_Recycling_Mobile_Kiosk_Competition
 Rain_Gutter_Design
@@ -1858,11 +1877,14 @@ Rapid_repurposing_of_pulp_and_paper_mills%2C_biorefineries%2C_and_breweries_for_
 Rapman_protocol_QAS
 Raspberry_Pi_Control_and_Wireless_Interface
 Re-birth_Bricks_in_Action_%28Tolocar%29
+Re-birth_Bricks_in_Action_%28Tolocar%29%2Fru
+Re-birth_Bricks_in_Action_%28Tolocar%29%2Fuk
 Real-Time_Eye_State_Detection_System_for_Driver_Drowsiness_Using_Convolutional_Neural_Network
 Real-time_Air_Quality_Display_for_communities_with_unreliable_power
 Recyclebot
 Recyclebot%2Fde
 Recyclebot%2Fes
+Recyclebot%2Ffr
 Recyclebot%2Fhu
 Recyclebot%2Fit
 Recyclebot%2Fja
@@ -1910,6 +1932,7 @@ Rice_husker_construction_manual
 Robin_deterrent_for_solar_charger
 Rocket_Lorena_Stove
 Rocket_Lorena_Stove%2Fca
+Rocket_Lorena_Stove%2Fes
 Rocket_stove_biomass_charcoal
 Rocket_stove_biomass_charcoal%2Fko
 Rocket_stove_biomass_charcoal%2Fzh
@@ -1961,6 +1984,7 @@ Samoa_Hostel_Thermosyphon_Solar_Shower_System%2Fcs
 Samoa_Hostel_Thermosyphon_Solar_Shower_System%2Ffr
 Samoa_Hostel_Thermosyphon_Solar_Shower_System%2Fpl
 Samoa_Hostel_Thermosyphon_Solar_Shower_System%2Fro
+Samoa_Hostel_Thermosyphon_Solar_Shower_System%2Fsk
 Samoa_Hostel_Truth_Tank
 Samoa_Hostel_Truth_Tank%2Fpt
 Samoa_Hostel_greywater_island
@@ -1973,6 +1997,7 @@ Sanctuary_greywater_system%2Fpt
 Sanctuary_improved_compost
 Sanctuary_rainwater
 Sanctuary_sink_to_toilet_greywater_system
+Sanctuary_sink_to_toilet_greywater_system%2Fes
 Sanctuary_sink_to_toilet_greywater_system%2Fpt
 Sanctuary_solar_food_dehydrator
 Sanit%C3%A4reinheit
@@ -2072,6 +2097,7 @@ Solar_Kettle_Thermos_Flask
 Solar_Lumber_Kiln
 Solar_Medical_Waste_Incinerator
 Solar_PV_Land_Use_-_A_Review
+Solar_PV_Tiling_BIPV_Review
 Solar_Photovoltaic_Open_Lectures
 Solar_Powered_Speaker_System
 Solar_Pura%3A_High-efficiency_vertical_solar_still
@@ -2137,6 +2163,7 @@ Sunny_Brae_Middle_School_Garden
 Sunny_Brae_Yurt
 Sunny_Brae_rainwater_catchment_system
 Superadobe_project
+Superadobe_project%2Ffa
 Supermileage_Systems_Enterprise_Senior_Design%3A_Internal_Body_Structures
 Surgical_Retractor_Complex
 Surgical_retractors_really_complex
@@ -2212,6 +2239,7 @@ Timbre_de_iluminaci%C3%B3n
 Tippy_tap
 Tire_shingles
 Tire_shingles%2Fes
+Tire_shingles%2Ffr
 Tire_shingles%2Fpt
 Toilet_Paper_Holder
 Tolocar
@@ -2226,6 +2254,7 @@ Trap_Asian_Hornets_Non_Lethal_-_Pi%C3%A8ge_Freloins_Asiatiques_-_Vespa_Velutina
 Treadle_pump_design_optimization
 Tree_nursery
 Tres_Rios_Constructed_Wetland_System
+Tricycle_Mini-Mobile_Repair_Lab%28MMR-Lab%29
 Trillium_Charter_School_busy_board
 Trillium_Charter_School_cob_bench_with_tunnel
 Trillium_Charter_School_custom_Galton_board
@@ -2391,6 +2420,7 @@ Wood_Burning_Stoves_2.0_DVD_set
 Wood_Mold_for_Concrete_BioSand_Filter_Production
 Wood_Planer
 Wood_gasification_in_Northern_Ontario_Canada
+Wooden_Lace
 Wooden_handscrew-style_clamps
 Wool_Dying
 World_Carfree_Day
